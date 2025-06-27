@@ -261,7 +261,8 @@ class OperatorDeepDive(OperatorBase):
                     latest_collection_content = dd_page["__deepdive_collection_updated"]
 
                 # After all iterations, do translation if needed
-                if os.getenv("TRANSLATION_LANG"):
+                translation_lang = os.getenv("TRANSLATION_LANG", "French")
+                if translation_lang:
                     llm_translation_response = llm_agent_trans.run(dd_page["__deepdive"])
                     print(f"LLM: Translation response: {llm_translation_response}")
                     dd_page["__translation_deepdive"] = llm_translation_response
