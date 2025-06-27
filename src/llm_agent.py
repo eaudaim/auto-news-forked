@@ -286,7 +286,7 @@ class LLMAgentSummary(LLMAgentBase):
         self.combine_prompt = combine_prompt
 
         if not self.combine_prompt:
-            translation_lang = os.getenv("TRANSLATION_LANG")
+            translation_lang = os.getenv("TRANSLATION_LANG", "French")
             print(f"[LLMAgentSummary] translation language: {translation_lang}, translation_enabled: {translation_enabled}")
 
             prompt_no_translation = llm_prompts.LLM_PROMPT_SUMMARY_COMBINE_PROMPT3
@@ -381,7 +381,7 @@ class LLMAgentTranslation(LLMAgentBase):
 
     def init_prompt(self, prompt=None, trans_lang=None):
         if not prompt:
-            translation_lang = trans_lang or os.getenv("TRANSLATION_LANG")
+            translation_lang = trans_lang or os.getenv("TRANSLATION_LANG", "French")
             print(f"[LLMAgentTranslation] translation language: {translation_lang}")
 
             prompt = llm_prompts.LLM_PROMPT_TRANSLATION.format(translation_lang) + "{content}"

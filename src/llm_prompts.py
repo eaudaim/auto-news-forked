@@ -73,7 +73,7 @@ Avoid using phrases that directly reference 'the script provides' to maintain a 
 """
 
 LLM_PROMPT_SUMMARY_COMBINE_PROMPT2_SUFFIX = """
-NUMBERED LIST SUMMARY IN BOTH ENGLISH AND {}, AFTER FINISHING ALL ENGLISH PART, THEN FOLLOW BY {} PART, USE '===' AS THE SEPARATOR:
+NUMBERED LIST SUMMARY IN {}:
 """
 
 LLM_PROMPT_SUMMARY_COMBINE_PROMPT3 = """
@@ -91,7 +91,7 @@ As a professional summarizer, create a concise and comprehensive summary of the 
 """
 
 LLM_PROMPT_SUMMARY_COMBINE_PROMPT_SUFFIX = """
-NUMBERED LIST SUMMARY IN BOTH ENGLISH AND {}, AFTER FINISHING ALL ENGLISH PART, THEN FOLLOW BY {} PART, USE '===' AS THE SEPARATOR:
+NUMBERED LIST SUMMARY IN {}:
 """
 
 # One-liner summary
@@ -109,7 +109,7 @@ Your goal is to:
 
 # In case need a translation
 LLM_PROMPT_JOURNAL_MIDDLE = """
-- For all the above goals, write one English version, then translate it to {} (including insights, takeaways, and action items), and use === as the delimiter.
+- For all the above goals, write in {} only (including insights, takeaways, and action items).
 """
 
 LLM_PROMPT_JOURNAL_SUFFIX = """
